@@ -121,33 +121,20 @@ Now, you can **choose** to set up the project **with or without Docker**.
 - Custom authentication with **bcrypt** password hashing  
 - **JWT-based** session management  
 
-![Sign In](./Screenshot/SignIn.png)  
-![Sign Up](./Screenshot/SignUp.png)  
-
 ### 2. 🏠 User Dashboard  
 - View and manage previous resume versions  
-
-![User Dashboard](./Screenshot/Dashboard.png)  
 
 ### 3. 🎨 Customizable Templates  
 - Choose from multiple resume templates  
 
-![Template Customization](./Screenshot/ThemeCust.png)  
-
 ### 4. 🤖 AI-Powered Suggestions  
-- Smart resume content suggestions  
-
-![AI Suggestions](./Screenshot/AI%20Suggestions.png)  
+- Smart resume content suggestions   
 
 ### 5. 🔍 Live Preview  
 - See real-time resume updates  
 
-![Live Preview](./Screenshot/Screenshot%202024-07-08%20233753.png)  
-
 ### 6. 📄 Export Options  
-- Download resumes in **PDF format**  
-
-![Download & Share](./Screenshot/downloadShare.png)  
+- Download resumes in **PDF format**    
 
 ---
 
