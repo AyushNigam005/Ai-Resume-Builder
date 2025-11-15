@@ -1,3 +1,4 @@
+// Updated ResumeForm.jsx
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Button } from "@/components/ui/button";
@@ -7,7 +8,8 @@ import Experience from "./form-components/Experience";
 import Education from "./form-components/Education";
 import Skills from "./form-components/Skills";
 import Project from "./form-components/Project";
-import { ArrowLeft, ArrowRight, HomeIcon } from "lucide-react";
+import TemplateSelector from "./TemplateSelector";
+import { ArrowLeft, ArrowRight, HomeIcon, Layout } from "lucide-react";
 import { Link } from "react-router-dom";
 import ThemeColor from "./ThemeColor";
 
@@ -15,6 +17,7 @@ function ResumeForm() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [enanbledNext, setEnabledNext] = useState(true);
   const [enanbledPrev, setEnabledPrev] = useState(true);
+  const [showTemplateSelector, setShowTemplateSelector] = useState(false);
   const resumeInfo = useSelector((state) => state.editResume.resumeData);
 
   useEffect(() => {
@@ -29,14 +32,9 @@ function ResumeForm() {
     }
   }, [currentIndex]);
 
-  // To Add Dummy Data
-  // useEffect(() => {
-  //   dispatch(addResumeData(data));
-  // }, []);
-
   return (
     <div>
-      <div className="flex justify-between">
+      <div className="flex justify-between mb-4">
         <div className="flex gap-2 items-center">
           <Link to="/dashboard">
             <Button>
@@ -44,6 +42,13 @@ function ResumeForm() {
             </Button>
           </Link>
           <ThemeColor resumeInfo={resumeInfo}/> 
+          <Button 
+            variant="outline"
+            onClick={() => setShowTemplateSelector(!showTemplateSelector)}
+          >
+            <Layout className="mr-2" size={16} />
+            Change Template
+          </Button>
         </div>
         <div className="flex items-center gap-3">
           {currentIndex > 0 && (
@@ -74,6 +79,20 @@ function ResumeForm() {
           )}
         </div>
       </div>
+
+      {/* Template Selector Modal/Drawer */}
+      {showTemplateSelector && (
+        <div className="mb-6 p-4 border rounded-lg bg-white shadow-sm">
+          <TemplateSelector />
+          <Button 
+            className="mt-4"
+            onClick={() => setShowTemplateSelector(false)}
+          >
+            Done
+          </Button>
+        </div>
+      )}
+
       {currentIndex === 0 && (
         <PersonalDetails
           resumeInfo={resumeInfo}
@@ -120,3 +139,5 @@ function ResumeForm() {
 }
 
 export default ResumeForm;
+
+
