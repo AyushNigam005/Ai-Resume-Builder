@@ -117,7 +117,7 @@ function Project({ resumeInfo, setEnabledNext, setEnabledPrev }) {
                 />
               </div>
               <div>
-                <label className="text-xs">Company Name</label>
+                <label className="text-xs">Tech Stack</label>
                 <Input
                   type="text"
                   name="techStack"
