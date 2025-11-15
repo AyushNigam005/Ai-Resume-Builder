@@ -1,8 +1,11 @@
+
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  resumeData:""
+  resumeData: "",
+  template: 1, // <-- add this line
 };
+
 export const resumeSlice = createSlice({
   name: "editResume",
   initialState,
@@ -10,10 +13,11 @@ export const resumeSlice = createSlice({
     addResumeData: (state, action) => {
       state.resumeData = action.payload;
     },
+    setTemplate: (state, action) => { // <-- add this reducer
+      state.template = action.payload;
+    },
   },
 });
 
-// Action creators are generated for each case reducer function
-export const { addResumeData } = resumeSlice.actions;
-
+export const { addResumeData, setTemplate } = resumeSlice.actions; // <-- include here
 export default resumeSlice.reducer;
